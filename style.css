@@ -17,7 +17,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
     color: rgb(255, 255, 255);
 }
 .navbar a {
@@ -28,6 +28,7 @@ body, html {
     transition: background-color 0.3s; 
     font-weight: 100;
     font-size: medium;
+    letter-spacing: 1px;
 }
 .navbar a:hover {
     color: white;
@@ -53,8 +54,8 @@ body, html {
     padding: 70px;
 }
 #year{
-    margin-top: 100px;
-    background-color: rgb(228, 32, 32);
+    margin-top: 10px;
+    background-color: rgb(225, 9, 9);
     width: 90px;
     text-align: center;
     padding: 10px;
@@ -62,8 +63,8 @@ body, html {
     font-weight: 100;
 }
 h1{
-    font-size: 70px;
-    max-width: 1000px;
+    font-size: 60px;
+    max-width: 700px;
 }
 #subTitle{
     font-size: 17px;
