@@ -1,3 +1,4 @@
+
 body, html {
     height: 100%; 
     margin: 0;
@@ -6,7 +7,7 @@ body, html {
 
 .background {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), /* This is the dark overlay */
+        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), /* This is the dark overlay */
         url('wesmoBackGround.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
@@ -21,7 +22,7 @@ body, html {
     color: rgb(255, 255, 255);
 }
 .navbar a {
-    color: rgb(218, 217, 217);
+    color: rgb(209, 207, 207);
     margin: 0 1rem;
     text-decoration: none;
     padding: 1rem 1rem; 
@@ -52,9 +53,9 @@ body, html {
 
 #mainTitle{
     padding: 70px;
+    padding-top: 50px;
 }
 #year{
-    margin-top: 10px;
     background-color: rgb(225, 9, 9);
     width: 90px;
     text-align: center;
@@ -67,13 +68,40 @@ h1{
     max-width: 700px;
 }
 #subTitle{
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 100;
     margin-bottom: 200px;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+    width: fit-content;
 }
 #imgLogo{
     width: 270px;
 }
+#typewriter {
+    margin-top: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 0.2em;
+    position: relative;
+    height: 1.4em; /* Adjust as needed */
+    align-items: center;
+  }
+  
+  #typewriter::after {
+    content: '|';  /* The cursor */
+    position: absolute;
+    animation: blink 0.5s infinite;
+  }
+ 
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  #wesmo{
+    color: red;
+    font-style: italic;
+  }
 @media only screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
