@@ -7,7 +7,7 @@ body, html {
 
 .background {
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)), /* This is the dark overlay */
+        linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1)), /* This is the dark overlay */
         url('wesmoBackGround.jpg');
     background-repeat: no-repeat;
     background-size: cover; 
@@ -86,6 +86,7 @@ h1{
     position: relative;
     height: 1.4em; /* Adjust as needed */
     align-items: center;
+    color: red;
   }
   
   #typewriter::after {
@@ -102,9 +103,92 @@ h1{
     color: red;
     font-style: italic;
   }
+  .hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    background-color: white;
+    height: 3px;
+    margin: 2px;
+    width: 25px;
+}
+
+.nav-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 1);
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding-top: 150px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+.hamburger-menu.toggle .line:nth-child(1) {
+    transform: rotate(45deg) translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+
+}
+.hamburger-menu.toggle .line:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.toggle .line:nth-child(3) {
+    transform: rotate(-45deg) translateY(5px);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.nav-cover {
+    z-index: 999;  /* Set a lower z-index than the hamburger menu */
+}
+
+.nav-right {
+    z-index: 1000;  /* Ensure the hamburger is clickable */
+    position: relative;
+}
+
+
 @media only screen and (max-width: 768px) {
+    .nav-right {
+        flex-direction: row;  /* Change to row instead of column */
+    }
+    .hamburger-menu {
+        display: flex;
+        padding-right: 2rem;
+    }
+
+    .nav-links {
+        flex-direction: column;      
+
+    }
+    .nav-links a{
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 40px;
+    }
+
+    .nav-left .nav-links a, .nav-right a {
+        display: none;
+    }
+
+    .nav-cover.active {
+        transform: translateX(0);
+    }
+
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         padding: 1rem;
     }
@@ -137,7 +221,7 @@ h1{
     }
 
     #year {
-        margin-top: 1rem;
+        margin-top: 8rem;
         width: 70px;
         font-size: 14px;
         padding: 5px;
